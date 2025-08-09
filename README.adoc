@@ -12,7 +12,7 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
 
 ## 🎯 Challenge Completion Summary
 
-**Applicant:** Sukuna0007Abhi  
+**Applicant:** Sukuna0007Abhi(Abhijit)  
 **Repository:** https://github.com/Sukuna0007Abhi/riscv-unified-db  
 **Branch:** `fix/assign`  
 **Status:** ✅ **COMPLETE**
