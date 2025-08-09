@@ -161,6 +161,8 @@ void print_yaml_bool(FILE* fp, const char* key, int value, int indent) {
 
 /* Write complete YAML instruction file */
 void write_instruction_yaml(FILE* fp, const instruction_data_t* inst, const char* output_filename) {
+    fprintf(fp, "# Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.\n");
+    fprintf(fp, "# SPDX-License-Identifier: BSD-3-Clause-Clear\n");
     fprintf(fp, "# Generated from C header by c_to_yaml program\n");
     fprintf(fp, "# Output file: %s\n", output_filename);
     fprintf(fp, "\n");

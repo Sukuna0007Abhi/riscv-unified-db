@@ -1,0 +1,21 @@
+# Generated from C header by c_to_yaml program
+# Output file: sltu_from_c.yaml
+
+$schema: "inst_schema.json#"
+kind: instruction
+name: ""
+long_name: ""
+description: ""
+definedBy: ""
+assembly: ""
+encoding:
+  match: ""
+  variables: []
+access:
+  s: ""
+  u: ""
+  vs: ""
+  vu: ""
+data_independent_timing: false
+operation(): |
+

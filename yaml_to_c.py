@@ -72,6 +72,9 @@ def yaml_to_c_header(yaml_file: str, output_file: str) -> bool:
         
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write(f"""/* 
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
+ *
  * Auto-generated from RISC-V UDB YAML: {os.path.basename(yaml_file)}
  * Instruction: {inst_name}
  */
