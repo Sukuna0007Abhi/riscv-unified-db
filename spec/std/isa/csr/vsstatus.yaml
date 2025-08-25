@@ -199,6 +199,18 @@ fields:
     type: RW-H
     definedBy: S
     reset_value: UNDEFINED_LEGAL
+  SDT:
+    location: 41
+    base: 64
+    description: |
+      *VS-mode Disable Trap*
+
+      Written to 1 when entering VS-mode from an exception/interrupt.
+      When returning via an SRET instruction in VS-mode, the bit is written to 0.
+      When `vsstatus.SDT=1`, direct write by CSR instruction cannot set `vsstatus.SIE` to 1, if not written together.
+    definedBy: Ssdbltrp
+    type: RW-H
+    reset_value: 0
   SIE:
     location: 1
     description: |

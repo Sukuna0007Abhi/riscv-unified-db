@@ -165,6 +165,11 @@ exception_codes:
   - num: 15
     name: Store/AMO page fault
     var: StoreAmoPageFault
+  - num: 16
+    name: Double trap
+    var: DoubleTrap
+    when:
+      version: ">= 1.13.0"
   - num: 18
     name: Software Check
     var: SoftwareCheck

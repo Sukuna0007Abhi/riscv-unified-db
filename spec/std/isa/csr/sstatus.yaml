@@ -124,6 +124,18 @@ fields:
     type: RW-H
     definedBy: S
     reset_value: UNDEFINED_LEGAL
+  SDT:
+    alias: mstatus.SDT
+    location: 41
+    base: 64
+    description: |
+      *Supervisor Disable Trap*
+
+      Alias of `mstatus.SDT`.
+
+    type: RW-H
+    definedBy: Ssdbltrp
+    reset_value: 0
   SIE:
     alias: mstatus.SIE
     location: 1

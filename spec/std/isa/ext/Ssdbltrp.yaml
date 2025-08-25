@@ -19,6 +19,10 @@ description: |
   When `menvcfg.DTE` is zero, the implementation behaves as though Ssdbltrp is not implemented.
   When Ssdbltrp is not implemented, `sstatus.SDT`, `vsstatus.SDT`, and `henvcfg.DTE` bits are read-only zero.
 type: privileged
+exception_codes:
+  - num: 16
+    name: Double trap
+    var: DoubleTrap
 versions:
   - version: "1.0.0"
     state: ratified

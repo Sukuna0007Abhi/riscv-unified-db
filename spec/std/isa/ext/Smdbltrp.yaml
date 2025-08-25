@@ -19,6 +19,10 @@ description: |
   error state. The extension introduces a mechanism to enter Debug Mode instead of asserting a
   critical-error signal to the platform when the hart is in a critical error state.
 type: privileged
+exception_codes:
+  - num: 16
+    name: Double trap
+    var: DoubleTrap
 versions:
   - version: "1.0.0"
     state: ratified

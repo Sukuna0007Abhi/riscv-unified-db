@@ -52,6 +52,18 @@ fields:
         return UNDEFINED_LEGAL;
       }
 
+  SDT:
+    location: 41
+    base: 64
+    description: |
+      *Supervisor Disable Trap*
+
+      Written to 1 when entering S-mode from an exception/interrupt.
+      When returning via an SRET instruction, the bit is written to 0.
+      When `mstatus.SDT=1`, direct write by CSR instruction cannot set `mstatus.SIE` to 1, if not written together.
+    definedBy: Ssdbltrp
+    type: RW-H
+    reset_value: 0
   MDT:
     location: 42
     base: 64

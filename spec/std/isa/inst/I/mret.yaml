@@ -37,6 +37,19 @@ operation(): |
     set_mode(PrivilegeMode::M);
   }
   CSR[mstatus].MPP = implemented?(ExtensionName::U) ? 2'b00 : 2'b11;
+  
+  # Ssdbltrp: Clear SDT bits based on target privilege mode
+  if (implemented?(ExtensionName::Ssdbltrp)) {
+    # Clear sstatus.SDT if target mode is U, VS, or VU
+    if (mode() == PrivilegeMode::U || mode() == PrivilegeMode::VS || mode() == PrivilegeMode::VU) {
+      CSR[mstatus].SDT = 0;  # This affects sstatus.SDT as it's an alias
+    }
+    # Clear vsstatus.SDT if target mode is VU
+    if (implemented?(ExtensionName::H) && mode() == PrivilegeMode::VU) {
+      CSR[vsstatus].SDT = 0;
+    }
+  }
+  
   $pc = $bits(CSR[mepc]);
 
 # SPDX-SnippetBegin

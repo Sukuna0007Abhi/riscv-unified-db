@@ -556,6 +556,16 @@ fields:
       <%- end -%>
     type: RW
     reset_value: UNDEFINED_LEGAL
+  DT:
+    location: 16
+    description: |
+      *Double Trap*
+
+      Double trap exceptions are not delegatable to (H)S-mode.
+      This field is read-only zero.
+    type: RO
+    reset_value: 0
+    definedBy: [Smdbltrp, Ssdbltrp]
   IGPF:
     location: 20
     description: |

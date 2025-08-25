@@ -118,6 +118,12 @@ operation(): |
     CSR[mstatus].SIE = CSR[mstatus].SPIE;
     CSR[mstatus].SPIE = 1;
     CSR[mstatus].SPP = 2'b00;
+    
+    # Ssdbltrp: Clear SDT bit on SRET
+    if (implemented?(ExtensionName::Ssdbltrp)) {
+      CSR[mstatus].SDT = 0;
+    }
+    
     $pc = $bits(CSR[sepc]);
   } else {
     if (CSR[mstatus].TSR == 1'b1) {
@@ -126,6 +132,12 @@ operation(): |
     CSR[vsstatus].SPP = 0;
     CSR[vsstatus].SIE = CSR[vsstatus].SPIE;
     CSR[vsstatus].SPIE = 1;
+    
+    # Ssdbltrp: Clear SDT bit on SRET in VS-mode
+    if (implemented?(ExtensionName::Ssdbltrp)) {
+      CSR[vsstatus].SDT = 0;
+    }
+    
     $pc = $bits(CSR[vsepc]);
   }
 
